@@ -1,0 +1,8 @@
+
+version: 1
+common:
+  resourcesPath: ./resources
+apps:
+  - appID: order-processor
+    appDirPath: /Users/ulysses/Projects/node_projects/dapr-test/order-porcessor
+    command: ["npm", "run", "start"]
