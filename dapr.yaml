@@ -2,7 +2,17 @@
 version: 1
 common:
   resourcesPath: ./resources
+  env:  # any environment variable shared across apps
+    DEBUG: true  
 apps:
   - appID: order-processor
     appDirPath: /Users/ulysses/Projects/node_projects/dapr-test/order-porcessor
+    # resourcesPaths: .dapr/resources # comma separated resources paths. (optional) can be left to default value by convention.
+    # appChannelAddress: 127.0.0.1 # network address where the app listens on. (optional) can be left to default value by convention.
+    # configFilePath: .dapr/config.yaml # (optional) can be default by convention too, ignore if file is not found.
+    appProtocol: grpc
+    # appPort: 8080
+    # appHealthCheckPath: "/healthz"
     command: ["npm", "run", "start"]
+    # appLogDestination: file # (optional), can be file, console or fileAndConsole. default is fileAndConsole.
+    # daprdLogDestination: file # (optional), can be file, console or fileAndConsole. default is file.
